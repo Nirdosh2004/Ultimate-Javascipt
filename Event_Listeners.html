@@ -24,18 +24,29 @@
                     <pre><code>console.log('Hey there')</code></pre>
           </div>
 
-          <!-- <button onclick="handleButtonClick();">Click me</button> -->
+          <div id="my-container"></div>
           <button id="clickButton">Click me</button>
          
           <script>
-         
-         const allChildren = document.querySelector("body" , "button").children;
 
-         for(let i=0 ;i<allChildren.length;i++){
-          allChildren.item(i).addEventListener('click' , () => {
-                    allChildren.item(i).remove(i);
-          })
-         }
+                    const button = document.getElementById('clickButton');
+                    const container = document.getElementById('my-container');
+
+                    let count = 1;
+                    button.addEventListener('click' , () => {
+                              const el = document.createElement("li");
+                              el.innerText = count;
+                              container.appendChild(el);
+                              count++;
+                    })
+         
+//          const allChildren = document.querySelector("body" , "button").children;
+
+//          for(let i=0 ;i<allChildren.length;i++){
+//           allChildren.item(i).addEventListener('click' , () => {
+//                     allChildren.item(i).remove(i);
+//           })
+//          }
 
           // //      function handleButtonClick() {
           // //           console.log("Button is clicked");
